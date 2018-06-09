@@ -1,0 +1,312 @@
+* {
+    box-sizing: border-box;
+    -webkit-transition: all  1s ease-in-out ;
+    -moz-transition: all  1s ease-in-out ;
+    -o-transition: all  1s ease-in-out ;
+    transition: all  1s ease-in-out;
+    font-family:  Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+}
+
+body {
+    display: block;
+    padding: 2% 5%;
+    height: auto;
+    max-height: auto;
+    width: 100%;
+    margin: 0;
+    background-color: blue;
+}
+
+.wraper {
+    width: 100%;
+    height: inherit;
+    max-height: inherit;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.header {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    border-bottom: 5px solid gray;
+    text-align: right;
+}
+
+.Title {
+    float: right;
+}
+
+.logo {
+    /*float: left;*/
+    width: 10vw;
+    margin: 0;
+    height: 100%;
+    float: left;
+
+}
+
+.logo svg {
+    width: inherit;
+    fill: blue;
+    float: left;
+}
+
+.content {
+    margin: 5vh auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 40vh;
+}
+
+.content p {
+    display: none;
+    font-size: 4em;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    -webkit-text-stroke: 1px red;
+    text-shadow: 2px 2px blue;
+    width: 80%;
+    height: 100%;
+    max-height: 90%;
+    max-width: 100%;
+    z-index: -2;
+    position: absolute;
+    display: inline;
+    float: left;
+}
+
+.content:hover p {
+    z-index: 2;
+}
+
+.portofolio {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.portofolio_section {
+    width: 33.3333%;
+}
+
+.portofolio_section figure {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+.section_img {
+    margin: 0 auto;
+    width: 75%;
+    height: 30vh;
+}
+
+.section_img:hover {
+    transform: scale(1.1,1.1);
+}
+
+figcaption {
+    height: 25%;
+}
+
+figcaption h3 {
+    margin: 0;
+}
+
+.portofolio_title {
+    width: 100%;
+}
+
+.protofolio_gallery {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.credits {
+    border-top: 5px solid gray;
+    width: 100%;
+    height: auto;
+    padding: 5vh 0;
+}
+
+.credits p {
+    display: inline;
+    font: bold 16px/33px;
+}
+
+.section_description {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+@media screen and (max-width:450px) {
+.content p {
+    font-size: 3em;
+    font-weight: 400;
+    padding-top:  5vh;
+}
+
+}
+
+@media screen and (max-width:350px) {
+.portofolio_title {
+     width: 100%;
+     text-align: center;
+}
+
+.protofolio_gallery {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.portofolio_section {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.logo {
+    padding: 10% 2px;
+    height: 100%;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+.logo svg {
+    width: 80%;
+}
+
+.Title h1 {
+    font-size: 18px;   
+}
+    
+.Title h2 {
+    font-size: 16px;
+}
+
+}
+
+@media screen and (min-width:351px) and (max-width: 470px) {
+.portofolio_title {
+     width: 100%;
+     text-align: center;
+}
+
+s.protofolio_gallery {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.portofolio_section {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.section_img {
+    max-height: 92px;
+    max-width: 135px;
+}
+
+.logo svg {
+    width: 60%;
+}
+
+ .logo {
+    padding: 5% 0 5%;
+    height: 100%;
+    width: 25%;
+}
+
+.Title {
+    width: 75%;
+}
+
+.Title h1 {
+    font-size: 20px;
+}
+
+.Title h2 {
+    font-size: 18px;
+}
+
+}
+
+@media screen and (min-width:471px) and (max-width:550px) {
+.portofolio_section {
+    width:100%;
+}
+
+.logo {
+    width: 30%;
+    margin: 5% 0;
+}
+
+.section_img {
+    max-height: 140px;
+    max-width: 205px;
+}
+
+.logo svg {
+    width: 50%;
+}
+
+.Title {
+    width: 70%;
+    text-align: right;
+}
+
+}
+
+@media screen and (min-width:551px) {
+.logo {
+    margin-top: 4%;
+    width: 25%;
+}
+
+.logo svg {
+    width: 40%;
+    max-height: 70px;
+}
+
+}
+
+@media screen and (min-width:900px) {
+.section_img {
+    max-height: 37vh;
+    max-width: 235px;
+}
+ 
+.logo {
+    margin-top: 3%;
+    width: 20%;
+}
+ 
+.logo svg {
+    width: 35%;
+}
+
+}
+@media screen and (min-width:1150px) {
+body {
+    max-width: 1150px;
+    margin: 0 auto;
+    font-size: 15px;
+
+}
+
+}
