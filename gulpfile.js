@@ -9,10 +9,9 @@ var eslint = require('gulp-eslint');
 var jasmine = require('gulp-jasmine-phantom');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
-const babel = require('gulp-babel');
-
+var babel = require('gulp-babel');
 var concat = require('gulp-concat');
-
+var sourcemaps = require('gulp-sourcemaps');
 
 //**********************
 //gulp.task('default',
@@ -130,6 +129,7 @@ gulp.task('scripts-dist', function(cb){
      babel(),
    uglify(),
     concat('all.js'),
+    sourcemaps.write(),
     gulp.dest('dist/js')
     ],cb);
     
