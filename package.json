@@ -18,13 +18,26 @@
     "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
+    "ava": "^0.25.0",
     "browser-sync": "^2.24.4",
+    "execa": "^0.10.0",
+    "get-stream": "^3.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^4.0.2",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "handlebars": "^4.0.11",
     "hoek": "^5.0.3",
-    "uglify-js": "^3.4.0"
+    "imagemin": "^5.3.1",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-pngquant": "^5.1.0",
+    "is-png": "^1.1.0",
+    "is-stream": "^1.1.0",
+    "lodash": "^4.17.10",
+    "minimatch": "^3.0.4",
+    "pngquant-bin": "^4.0.0",
+    "tunnel-agent": "^0.6.0",
+    "uglify-js": "^3.4.0",
+    "xo": "^0.21.1"
   }
 }

@@ -12,7 +12,9 @@ var pump = require('pump');
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
-
+var imagemin = require('imagemin');
+var imageminPngquant = require('imagemin-pngquant');
+var imageminJpegtran = require('imagemin-jpegtran');
 //**********************
 //gulp.task('default',
 // gulp 4 optimazation:
@@ -109,8 +111,21 @@ gulp.task('unitTests', function () {
 });
 
   gulp.task('copyimg', function () {
-  return gulp.src('img/*')
-          .pipe(gulp.dest('dist/img'));
+ /* return gulp.src('img/*')
+          .pipe(imagemin({
+            progressive: true,
+            use: [imageminPngquant()]
+          }))
+          .pipe(gulp.dest('dist/img'));*/
+    return      imagemin(['img/*.{jpg,png}'], 'dist/img', {
+    plugins: [
+        imageminJpegtran(),
+        imageminPngquant({quality: '65-80'})
+    ]
+}).then(files => {
+    console.log(files);
+    //=> [{data: <Buffer 89 50 4e …>, path: 'build/images/foo.jpg'}, …]
+});
 });
 
 gulp.task('scripts', function(){
@@ -139,10 +154,11 @@ gulp.task('scripts-dist', function(cb){
 // compatible with gulp 4
 gulp.task('default',
 // gulp 4 optimazation:
-  gulp.series('styles', gulp.parallel( 'lint','copyhtml','copyimg' )),
+  gulp.series('styles', 'copyimg',/* 'lint', */gulp.parallel( 'copyhtml') ,
 //,['task1','task2'], wont work in gulp 4
- function(){
+ function def(){
     gulp.watch('sass/**/*.scss', gulp.series('styles'));
     gulp.watch('js/**/*.js', gulp.series('lint'));
-    gulp.watch('index/html', gulp.series('copyhtml'));
-});
+    gulp.watch('./index.html', gulp.series('copyhtml'));
+    console.log('all done');
+}));
