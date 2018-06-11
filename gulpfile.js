@@ -160,5 +160,5 @@ gulp.task('default',
     gulp.watch('sass/**/*.scss', gulp.series('styles'));
     gulp.watch('js/**/*.js', gulp.series('lint'));
     gulp.watch('./index.html', gulp.series('copyhtml'));
-    console.log('all done');
 }));
+gulp.task('dist',gulp.series('copyhtml','copyimg','styles','scripts-dist','lint'));
